@@ -1,0 +1,244 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_why.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Оформлення замовлення</title>
+</head>
+
+<body>
+
+
+<div class="section_green">
+    <div class="logo_green">
+        <img src="{% static 'logogreen.png' %}" alt="Logo">
+    </div>
+
+    <div class="hamburger-menu">
+        <input id="menu_green__toggle" type="checkbox" />
+        <label class="menu_green__btn" for="menu_green__toggle">
+            <span></span>
+        </label>
+        <ul class="menu_green__box">
+            <li><a class="menu_green__item" href="{% url 'store' %}">Магазин</a></li>
+            <li><a class="menu_green__item" href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a class="menu_green__item" href="{% url 'why' %}">Чому ми?</a></li>
+            <li><a class="menu_green__item" href="#">Обране</a></li>
+            <li><a class="menu_green__item" href="{% url 'cart' %}">Кошик</a></li>
+        </ul>
+    </div>
+
+    <nav class="menu-1_green">
+        <ul>
+            <li><a href="#"><img src="{% static 'mapG.svg' %}">Доставка по всій Україні</a></li>
+            <li><a href="#"><img src="{% static 'callG.svg' %}">(066)709-97-35  </a></li>
+            <li><a href="#"><img src="{% static 'instG.svg' %}"></a></li>
+            <li><a href="#"><img src="{% static 'tgG.svg' %}"></a></li>
+        </ul>
+    </nav>
+    <nav class="menu-2_green">
+        <ul>
+            <li class="logo-in-menu_green"><img src="{% static 'logogreen.png' %}" width="220px" height="80px"></li>
+            <li><a href="{% url 'store' %}">Магазин</a></li>
+            <li><a href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a href="{% url 'why' %}">Чому ми?</a></li>
+            <li class="menu-icons"><img src="{% static 'heartG.svg' %}"></li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <div class="container_order">
+
+
+    <h1>Оформлення замовлення</h1>
+        <table class="order_table">
+            <thead>
+                <tr>
+                    <th>Фото</th>
+                    <th>Назва</th>
+                    <th>Кількість</th>
+                    <th>Ціна</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    <div class="second_column">
+        <form action="/cart">
+        <div class="text_block">
+            <h2>Контактні дані отримувача</h2>
+
+            <hr>
+            <div class="form_group">
+                <label for="last_name">Прізвище:</label>
+                <input type="text" id="last_name" name="last_name">
+            </div>
+            <div class="form_group">
+                <label for="phone">Телефон:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+        </div>
+
+        <div class="text_block">
+            <h2>Доставка(за тарифами Нової пошти)</h2>
+            <hr>
+            <div class="form_group">
+                <label>Нова пошта:</label><br>
+                <input type="radio" id="type1" name="delivery_type" value="У відділенні">
+                <label for="type1">У відділенні Нової пошти</label>
+                <input type="radio" id="type2" name="delivery_type" value="Кур'єром Нової пошти">
+                <label for="type2">Кур'єром Нової пошти</label>
+                <input type="radio" id="type3" name="delivery_type" value="В поштомат Нової пошти">
+                <label for="type3">В поштомат Нової пошти</label>
+            </div>
+            <div class="form_group">
+                <label for="city">Місто:</label>
+                <input type="text" id="city" name="city">
+            </div>
+            <div class="form_group">
+                <label for="viddil">Відділення:</label>
+                <input type="text" id="viddil" name="viddil">
+            </div>
+        </div>
+
+        <div class="text_block">
+            <h2>Оплата</h2>
+            <p>Оплата відбувається при отриманні товару і складається з ціни доставки та суми замовлення.</p>
+        </div>
+        <button class="button_order">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+     </form>
+</div>
+
+</div>
+
+
+
+    <footer class="footer">
+    <div class="container4">
+        <div class="row-1">
+            <p><img src="{% static 'np.svg' %}">Доставка новою поштою від 50 грн</p>
+            <p><img src="{% static 'clock.svg' %}">Відправка в день замовлення - при замовленні до 18:00 по буднях<br> і до 16:00 по вихідних</p>
+            <p><img src="{% static 'pin.svg' %}">Доставка по всій Україні</p>
+        </div>
+        <hr class="footer-line">
+        <div class="row-2">
+            <div class="col1">
+                <img src="{% static 'logoWT.svg' %}" alt="Логотип" width="196" height="60">
+                <p>— магазин найкращих крафтових джемів</p>
+            </div>
+            <div class="col2">
+                <h4>Смаки</h4>
+                <ul>
+                    <li><a href="{% url 'product_detail' 'lemon' %}">Лимон</a></li>
+                    <li><a href="{% url 'product_detail' 'apricot' %}">Абрикос</a></li>
+                    <li><a href="{% url 'product_detail' 'peach' %}">Персик</a></li>
+                    <li><a href="{% url 'product_detail' 'apple' %}">Яблуко</a></li>
+                    <li><a href="{% url 'product_detail' 'pumpkin' %}">Гарбуз</a></li>
+                    <li><a href="{% url 'product_detail' 'blueberry' %}">Чорниця</a></li>
+                    <li><a href="{% url 'product_detail' 'raspberry' %}">Малина</a></li>
+                    <li><a href="{% url 'product_detail' 'mandarin' %}">Мандарин</a></li>
+                    <li><a href="{% url 'product_detail' 'pear' %}">Груша</a></li>
+                    <li><a href="{% url 'product_detail' 'aiva' %}">Айва</a></li>
+                    <li><a href="{% url 'product_detail' 'plum' %}">Слива</a></li>
+                </ul>
+            </div>
+            <div class="col3">
+                <h4 >Інформація</h4>
+                <ul>
+                    <li><a href="{% url 'home' %}">Про нас</a></li>
+                    <li><a href="{% url 'contacts' %}">Фізичний магазин</a></li>
+                    <li><a href="{% url 'why' %}">Переваги</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="col4">
+                <p>Доставка по всій Україні</p>
+                <p>Працюємо щодня</p>
+                <p>066-709-97-35</p>
+                <p>Запитання? Дзвони або пиши з 9 до 21</p>
+                <p>Без вихідник</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    updateCart('init', 'init');
+});
+
+
+
+
+function updateCart(productName, action) {
+    fetch('/update_cart/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({ productName: productName, action: action })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Server Response:', data);
+        updateTableAndCalculateTotalPrice(data.cart, data.total_cost);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+
+
+
+function updateTableAndCalculateTotalPrice(cart, totalCost) {
+    const tableBody = document.querySelector('.order_table tbody');
+    tableBody.innerHTML = '';
+
+    if (cart.length > 0) {
+        cart.forEach(productInfo => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+
+               <td><img src="/static/all_products/${productInfo.name}/${productInfo.name}.png" style="width: 100px;"></td>
+
+
+                <td>${productInfo.Showcase_name}</td>
+                <td>${productInfo.quantity}</td>
+                <td>${productInfo.price} грн.</td>
+                <td>
+                    <button onclick="updateCart('${productInfo.name}', 'add')">+</button>
+                    <button onclick="updateCart('${productInfo.name}', 'remove')">-</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+
+        const totalRow = document.createElement('tr');
+        totalRow.innerHTML = `<td colspan="5">Загальна вартість: ${totalCost.toFixed(2)} грн.</td>`;
+        tableBody.appendChild(totalRow);
+    } else {
+        tableBody.innerHTML = `<tr><td colspan="5">Кошик порожній</td></tr>`;
+    }
+}
+
+</script>
+
+
+
+</body>
+</html>

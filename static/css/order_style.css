@@ -1,0 +1,184 @@
+.container_order {
+    padding: 20px;
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    color: #D9AE79;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container_order h1 {
+    font-size: 36px;
+    color: #324028;
+    margin-bottom: 50px;
+    text-align: left;
+    width: 100%;
+}
+
+.order_table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 45%;
+    color: #324028;
+    border: 2px solid #324028;
+    height: 40%;
+}
+
+
+
+
+.order_table th, .order_table td {
+    border: 1px solid #324028;
+    border-width: 0 0 1px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.order_table img {
+    max-width: 40%;
+}
+
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px 0;
+}
+
+.counter input[type="text"] {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+    background-color: #324028;
+}
+
+.counter button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #324028;
+    transition: all 0.2s ease;
+}
+
+.counter button:hover {
+    background-color: #D9D1C7;
+    color: #fff;
+}
+
+.counter .plus {
+    font-size: 15px;
+    top: -20px;
+    margin-top: 5px;
+}
+
+.counter .minus {
+    font-size: 15px;
+    bottom: -20px;
+    margin-bottom: 5px;
+}
+
+.total_price {
+    text-align: right;
+    font-weight: bold;
+}
+
+.second_column {
+    width: 45%;
+}
+
+
+.text_block {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    text-align: left;
+}
+
+.text_block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #324028;
+}
+
+.text_block hr {
+    border: 1px solid #324028;
+    margin-bottom: 10px;
+}
+
+.form_group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form_group label {
+    color: #324028;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.form_group input[type="text"] {
+    background-color: #D9D1C7;
+    flex: 1;
+    height: 30px;
+    border: 2px solid #324028;
+}
+
+.text_block p{
+    border-top: 2px solid #324028;
+    color: #324028;
+}
+
+.button_order {
+    margin-left:0px;
+    border: 2px solid #324028;
+    color: #324028;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    transition: background-color 0.2s ease-in-out;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button_order:hover {
+    background-color: #324028;
+    color: #D9D1C7;
+}
+
+
+.remove-product {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+}
+
+.remove-product img {
+    display: block;
+    width: 30%;
+    height: auto;
+}

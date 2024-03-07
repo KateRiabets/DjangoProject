@@ -1,0 +1,81 @@
+
+{
+    "products": [
+        {
+            "name_en": "apricot",
+            "name_ua": "Абрикосовий джем",
+	    "image": "swapr_mobile.png",
+            "price": 130
+        },
+        {
+            "name_en": "blueberry",
+            "name_ua": "Чорничний джем",
+	    "image": "swach.png",
+            "price": 130
+        },
+        {
+            "name_en": "apple",
+            "name_ua": "Яблучний джем",
+	    "image": "swapear.png",
+            "price": 120
+        },
+        
+
+        {
+            "name_en": "aiva",
+            "name_ua": "Айвовий джем",
+	    "image": "swaiva.png",
+            "price": 130
+        },
+        {
+            "name_en": "lemon",
+            "name_ua": "Лимонний джем",
+	    "image": "swalem.png",
+            "price": 149
+        },
+
+        {
+            "name_en": "raspberry",
+            "name_ua": "Малиновий джем",
+	    "image": "swalina.png",
+            "price": 130
+        },
+        
+
+        {
+            "name_en": "mandarin",
+            "name_ua": "Мандариновий джем",
+	    "image": "swandarin.png",
+            "price": 130
+        },
+        {
+            "name_en": "plum",
+            "name_ua": "Сливовий джем",
+	    "image": "swaliva.png",
+            "price": 100
+        },
+
+        {
+            "name_en": "pear",
+            "name_ua": "Грушевий джем",
+	    "image": "swapear.png",
+            "price": 120
+        },
+
+        {
+            "name_en": "pumpkin",
+            "name_ua": "Гарбузовий джем",
+	    "image": "swakva.png",
+            "price": 130
+        },
+        {
+            "name_en": "peach",
+            "name_ua": "Персиковий джем",
+	    "image": "sweach.png",
+            "price": 149
+        }
+
+
+
+    ]
+}

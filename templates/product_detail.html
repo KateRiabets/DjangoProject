@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_why.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_store.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tovar_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>{{ product.Showcase_name }}</title>
+</head>
+<body>
+<div class="section_green">
+    <div class="logo_green">
+        <img src="{% static 'logogreen.png' %}" alt="Logo">
+    </div>
+
+    <div class="hamburger-menu">
+        <input id="menu_green__toggle" type="checkbox" />
+        <label class="menu_green__btn" for="menu_green__toggle">
+            <span></span>
+        </label>
+        <ul class="menu_green__box">
+            <li><a class="menu_green__item" href="{% url 'store' %}">Магазин</a></li>
+            <li><a class="menu_green__item" href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a class="menu_green__item" href="{% url 'why' %}">Чому ми?</a></li>
+            <li><a class="menu_green__item" href="#">Обране</a></li>
+            <li><a class="menu_green__item" href="{% url 'cart' %}">Кошик</a></li>
+        </ul>
+    </div>
+
+    <nav class="menu-1_green">
+        <ul>
+            <li><a href="#"><img src="{% static 'mapG.svg' %}">Доставка по всій Україні</a></li>
+            <li><a href="#"><img src="{% static 'callG.svg' %}">(066)709-97-35  </a></li>
+            <li><a href="#"><img src="{% static 'instG.svg' %}"></a></li>
+            <li><a href="#"><img src="{% static 'tgG.svg' %}"></a></li>
+        </ul>
+    </nav>
+    <nav class="menu-2_green">
+        <ul>
+            <li class="logo-in-menu_green"><img src="{% static 'logogreen.png' %}" width="220px" height="80px"></li>
+            <li><a href="{% url 'store' %}">Магазин</a></li>
+            <li><a href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a href="{% url 'why' %}">Чому ми?</a></li>
+            <li class="menu-icons"><img src="{% static 'heartG.svg' %}"></li>
+
+            <li>
+                <a href="{% url 'cart' %}" class="menu-icons" style="text-decoration: none;">
+                    <span id="cart-counter" class="cart-counter">{{ total_items }}</span>
+                    <img src="{% static 'bagG.svg' %}">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+<div class="container_tovar">
+    <div class="tovar_image">
+        <img src="{% static 'All_products/' %}{{ product.name }}/store_preview_img.png">
+    </div>
+
+    <div class="tovar_info">
+        <h1>{{ product.Showcase_name }}</h1>
+        <h3>{{ product.price }} грн</h3>
+
+        <form id="add-to-cart-form">
+            <button type="submit" class="button_add" id="add-to-cart-button" data-product-name="{{ product.name }}">ДОДАТИ ДО КОШИКА</button>
+        </form>
+    </div>
+</div>
+
+<div class="opis">
+    <h2>ОПИС</h2>
+    <p>{{ product.description }}</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartForm = document.getElementById('add-to-cart-form');
+    addToCartForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const productName = this.querySelector('button[data-product-name]').getAttribute('data-product-name');
+
+        fetch('/add_to_cart/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+
+            },
+            body: JSON.stringify({productName: productName})
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            document.getElementById('cart-counter').textContent = data.total_items;
+            console.log('Cart updated:', data.message, 'Total items in cart:', data.total_items);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+    <div class="container4">
+        <div class="row-1">
+            <p><img src="{% static 'np.svg' %}">Доставка новою поштою від 50 грн</p>
+            <p><img src="{% static 'clock.svg' %}">Відправка в день замовлення - при замовленні до 18:00 по буднях<br> і до 16:00 по вихідних</p>
+            <p><img src="{% static 'pin.svg' %}">Доставка по всій Україні</p>
+        </div>
+        <hr class="footer-line">
+        <div class="row-2">
+            <div class="col1">
+                <img src="{% static 'logoWT.svg' %}" alt="Логотип" width="196" height="60">
+                <p>— магазин найкращих крафтових джемів</p>
+            </div>
+            <div class="col2">
+                <h4>Смаки</h4>
+                <ul>
+                    <li><a href="{% url 'product_detail' 'lemon' %}">Лимон</a></li>
+                    <li><a href="{% url 'product_detail' 'apricot' %}">Абрикос</a></li>
+                    <li><a href="{% url 'product_detail' 'peach' %}">Персик</a></li>
+                    <li><a href="{% url 'product_detail' 'apple' %}">Яблуко</a></li>
+                    <li><a href="{% url 'product_detail' 'pumpkin' %}">Гарбуз</a></li>
+                    <li><a href="{% url 'product_detail' 'blueberry' %}">Чорниця</a></li>
+                    <li><a href="{% url 'product_detail' 'raspberry' %}">Малина</a></li>
+                    <li><a href="{% url 'product_detail' 'mandarin' %}">Мандарин</a></li>
+                    <li><a href="{% url 'product_detail' 'pear' %}">Груша</a></li>
+                    <li><a href="{% url 'product_detail' 'aiva' %}">Айва</a></li>
+                    <li><a href="{% url 'product_detail' 'plum' %}">Слива</a></li>
+                </ul>
+            </div>
+            <div class="col3">
+                <h4 >Інформація</h4>
+                <ul>
+                    <li><a href="{% url 'home' %}">Про нас</a></li>
+                    <li><a href="{% url 'contacts' %}">Фізичний магазин</a></li>
+                    <li><a href="{% url 'why' %}">Переваги</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="col4">
+                <p>Доставка по всій Україні</p>
+                <p>Працюємо щодня</p>
+                <p>066-709-97-35</p>
+                <p>Запитання? Дзвони або пиши з 9 до 21</p>
+                <p>Без вихідник</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

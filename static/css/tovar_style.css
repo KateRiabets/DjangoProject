@@ -1,0 +1,386 @@
+
+.container_tovar {
+    display: flex;
+    align-items: center;
+    max-width: 1170px;
+    margin: 50px auto;
+    padding: 20px;
+    border-top: 1px solid #324028;
+}
+
+.tovar_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-top: -300px;
+    margin-left: 50px;
+    max-width: 350px;
+
+}
+
+.tovar_info h1 {
+    font-size: 32px;
+    color: #324028;
+    margin-bottom: 50px;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.tovar_info h3 {
+    font-size: 26px;
+    color: #324028;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.tovar_info .tovar_rating-p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tovar_info .tovar_rating {
+    font-size: 20px;
+    color: #324028;
+}
+
+.tovar_info p {
+    font-size: 20px;
+    color: #324028;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-left: 20px;
+    flex: 1;
+}
+.tovar_image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    margin-left: 60px;
+}
+
+.tovar_image img {
+    max-width: 150%;
+    max-height: 150%;
+}
+
+
+.container_tovar .button2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 25vw;
+    line-height: 5vw;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #324028;
+    border: 2px solid #324028;
+    background-color: transparent;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: 52px;
+    max-height: 92px;
+    min-font-size: 20px;
+
+}
+
+.container_tovar .button2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 64, 40, 0.5);
+    transition: left 0.5s ease;
+}
+
+.container_tovar .button2:hover::before {
+    left: 0;
+}
+
+.container_tovar .button2 a {
+    color: #324028;
+    text-decoration: none;
+}
+
+@media (max-width: 490px) {
+    .container_tovar .button2 {
+        font-size: min(max(20px, calc(4vw)), 2.6rem);
+        width: 100%;
+    }
+}
+
+.button_add {
+    border: 2px solid #324028;
+    color: #324028;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 20px;
+    transition: background-color 0.2s ease-in-out;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button_add:hover {
+    background-color: #324028;
+    color: #D9D1C7;
+}
+.mobile-img-tovar{
+    display: none;
+}
+
+.opis{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+    max-width: 1170px;
+    margin:-200px auto 50px;
+    padding: 20px 0 50px 0;
+    border-top: 1px solid #324028;
+    border-bottom: 1px solid #324028;
+    font-size: 22px;
+    color: #324028;
+}
+.opis h2{
+    text-align: center;
+    font-size: 30px;
+}
+.feedback{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 1170px;
+    margin: -30px auto 20px;
+
+    font-size: 22px;
+    color: #324028;
+}
+.feedback p{
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+.rating2 p{
+    text-align: left;
+
+
+}
+
+.feedback input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #324028;
+    font-size: 20px;
+    background-color: #D9D1C7;
+    margin-bottom: 20px;
+    color: #324028;
+}
+
+.vidhuky{
+    margin-top: 50px;
+}
+.vidhuky p{
+    text-align: center;
+}
+@media screen and (min-width: 1230px) {
+    .feedback input[type="text"]:first-of-type {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .feedback input[type="text"]:first-of-type {
+        width: 100%;
+    }
+}
+
+.rating2 {
+    display: flex;
+    align-items: center;
+}
+
+
+.star2.selected::before {
+    color: transparent;
+}
+
+.star2.selected::after {
+    width: 100%;
+}
+
+
+
+.stars2 {
+    font-size: 30px;
+    color: #D9D1C7;
+    margin-top: -20px;
+    direction: rtl; /* Добавьте это свойство */
+}
+
+.star2 {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-left: 10px; /* Уменьшено с 20px */
+}
+
+.star2::before {
+    content: "\2606";
+    color: #324028;
+    position: absolute;
+    z-index: 1;
+}
+
+.star2::after {
+    content: "\2605";
+    color: #324028;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+}
+
+.star2:hover::before,
+.star2:hover ~ .star2::before {
+    color: transparent;
+}
+
+.star2:hover::after,
+.star2:hover ~ .star2::after {
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #324028;
+
+}
+.ok {
+    width:20%;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #324028;
+    background-color: transparent;
+    border: 2px solid #324028;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ok:hover {
+    background-color: #324028;
+    color: #D9D1C7;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1230px) {
+    .feedback{
+        width: 90%;
+    }
+     input[type="text"] {
+        width: 100%;
+    }
+
+    .tovar_image{
+        display: none;
+    }
+    .mobile-img-tovar{
+        width: 90%;
+        display: block;
+        margin:0 auto;
+    }
+
+    .container_tovar {
+        margin-top:100px;
+        margin-left: -10px;
+        flex-direction: column;
+        width: 90%;
+
+    }
+
+    .opis{
+        margin-top:50px;
+        flex-direction: column;
+        width: 90%;
+
+    }
+    .tovar_image {
+        margin-left: 0;
+        text-align: center;
+    }
+    .tovar_info {
+        margin:0 auto;
+        text-align: center;
+        max-width: 100%;
+    }
+    .tovar_info h1{
+        margin:0 auto;
+        text-align: center;
+        max-width: 100%;
+        font-size: 26px;
+    }
+    .tovar_info p{
+        margin:0 auto;
+        text-align: right;
+        max-width: 100%;
+    }
+    .tovar_info h3{
+        margin:0 auto;
+        text-align: center;
+        max-width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comment-name,
+.comment-rating {
+    display: inline-block; }
+
+.comment-rating {font-size:120%;}
+
+.comment { width: 100%; border-bottom: 1px solid rgba(50,64,40,0.5);}
+
+.comment p { text-align: left;  }
+.comment .comment-name {margin-bottom: -0.5%; margin-top: 1%; font-weight: 600;}
+.comment .comment-text {margin-top: -2%; margin-bottom: 1.5%; font-weight: 300; font-size: 90%; }
+
+.button-container {margin-bottom: -3%;}
+
+
+.rating-stars {}

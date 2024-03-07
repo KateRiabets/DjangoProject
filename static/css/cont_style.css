@@ -1,0 +1,99 @@
+h2{
+    color: #D9AE79;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+}
+
+.container_contacts{
+    padding: 20px;
+    width: 60.9375vw;
+    text-align: center;
+    margin: 0 auto;
+    color: #D9AE79;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-links img{
+    height: 25px;
+}
+.contact-link {
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+.map {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
+}
+iframe{
+    width:600px;
+    height:450px;
+    border:0;
+    margin-top: 50px;
+}
+
+.contacts p{
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 24px;
+}
+.text {
+    width: 50%;
+    margin-top: 90px;
+    margin-left: 30%;
+}
+
+.text p {
+    margin: 0 0 10px;
+}
+
+.text-for-mob-cont {
+			font-family: 'Nunito', sans-serif;
+			color: white;
+			font-size: 24px;	
+			display:none;
+					}
+
+
+@media only screen and (min-width: 650px) and (max-width: 1230px) {
+	.container_contacts h2 {margin-top:7vw;}
+
+	.map-as-class{align-items:center; display:flex;  margin: 0 auto}
+	.map{display: flex; margin: 0 auto; align-content:center; width: 100%;}
+	.text {display: none;}
+	.text-for-mob-cont {display:block; margin-top: 3vw;}
+	.contact-links{flex-direction: column; display: flex; align-items: center;}
+	.grafik-roboty {margin-top: 2vw; margin-bottom: 5vw;}
+}
+
+@media (max-width: 649px) {
+	
+	.container_contacts {width: 90vw;}
+	.container_contacts h2 {margin-top:11vw;}
+	.map-as-class{align-items:center; display:flex;  margin: 0 auto}
+	.map {display: flex; margin: 0 auto; width: 100%;}
+	.text {display: none;}
+	.text-for-mob-cont {display:block; margin-top: 3vw;}
+	.grafik-roboty {margin-top: 5vw; margin-bottom: 5vw;}
+	.contact-links{flex-direction: column; display: flex; align-items: center;}
+	
+}

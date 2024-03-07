@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="{% static 'css/adapt.css' %}">
+       <link rel="stylesheet" href="{% static 'css/style_why.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Smakoluk.ua - крафтові джеми</title>
+
+
+</head>
+<body>
+
+<div class="section-1">
+    <div class="logo">
+        <img src="{% static 'logoW.png' %}" alt="Logo">
+    </div>
+
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+        <ul class="menu__box">
+            <li><a class="menu__item" href="{% url 'store' %}">Магазин</a></li>
+            <li><a class="menu__item" href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a class="menu__item" href="{% url 'why' %}">Чому ми?</a></li>
+            <li><a class="menu__item" href="#">Обране</a></li>
+            <li><a class="menu__item" href="{% url 'cart' %}">Кошик</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <nav class="menu-1">
+        <ul>
+            <li><a href="#"><img src="{% static 'map.svg' %}">Доставка по всій Україні</a></li>
+            <li><a href="#"> <img src="{% static 'call.svg' %}">(066)709-97-35  </a></li>
+            <li><a href="#"><img src="{% static 'inst.svg' %}"></a></li>
+            <li><a href="#"><img src="{% static 'tg.svg' %}"></a></li>
+        </ul>
+    </nav>
+    <nav class="menu-2">
+        <ul>
+            <li class = "logo-in-menu"><img src="{% static 'logoW.png' %}" width="220px" height="80px"></li>
+            <li><a href="{% url 'store' %}">Магазин</a></li>
+            <li><a href="{% url 'contacts' %}">Контакти</a></li>
+            <li><a href="{% url 'why' %}">Чому ми?</a></li>
+            <li class="menu-icons"><img src="{% static 'heart.svg' %}"></li>
+
+            <li>
+<a href="{% url 'cart' %}" class="menu-icons" style="text-decoration: none;">
+    <span id="cart-counter-white" class="cart-counter">{{ total_items }}</span>
+    <img src="{% static 'bag.svg' %}">
+</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+
+    <div class="container">
+        <h1>Крафтові джеми<br> з натуральних<br> продуктів</h1>
+
+        <a href="{% url 'store' %}" class="button1">Обери свій смак</a>
+    </div>
+</div>
+
+
+
+<div class="section-2">
+    <div class="container2">
+        <div class="content">
+            <div class="text-wrapper">
+                <h2 class="section-title">Наша продукція</h2>
+                <h2 class="section-subtitle">Натуральність і якість</h2>
+                <p class="section-text">Крафтовий джем від «Smakoluk» виготовляється виключно з натуральних, якісних продуктів.
+                    Усі продукти вирощені на власному господарстві, дбайливо зібрані й майстерно приготовані, щоб ви їли лише найкраще.
+                    Ми пропонуємо вам джеми з 11 різними смаками: від абрикоса та яблука до гарбуза та мандаринів.
+                    Всі вони різні, але смакують однаково чудово.<br><br> Наш крафтовий джем є ідеальним варіантом для смачного сніданку, обіду чи вечері,
+                    особливо якщо доповнювати ним млинці чи печиво. Він підіймає настрій навіть в найхолодніший вечір та є не тільки смачним, а й корисним!
+                    Кожна банка містить дозу вітамінів, достатню на цілий день, тому їсти джем від «Smakoluk» - це поєднання приємного з корисним.</p>
+                <img src="{% static 'sec2.png' %}" class="mobile-img">
+                <div class="img-wrapper"><img src="{% static 'sec2_mob.png' %}" class="mobile-ver-img"></div>
+
+                <div class="block-button2"><a href="{% url 'why' %}" class="button2">Дізнатися більше</a></div>
+            </div>
+            <div class="image-wrapper">
+                <img src="{% static 'sec2.png' %}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class="footer2">
+    <div class="container4">
+        <div class="row2-1">
+            <p><img src="{% static 'npG.svg' %}">Доставка новою поштою від 50 грн</p>
+            <p><img src="{% static 'clockG.svg' %}">Відправка в день замовлення - при замовленні до 18:00 по буднях<br> і до 16:00 по вихідних</p>
+            <p><img src="{% static 'pinG.svg' %}">Доставка по всій Україні</p>
+        </div>
+        <hr class="footer2-line">
+        <div class="row2-2">
+            <div class="col12">
+                <img src="{% static 'logogreen.png' %}" alt="Логотип" width="196" height="60">
+                <p>— магазин найкращих крафтових джемів</p>
+            </div>
+            <div class="col22">
+                <h4>Смаки</h4>
+                <ul>
+                    <li><a href="{% url 'product_detail' 'lemon' %}">Лимон</a></li>
+                    <li><a href="{% url 'product_detail' 'apricot' %}">Абрикос</a></li>
+                    <li><a href="{% url 'product_detail' 'peach' %}">Персик</a></li>
+                    <li><a href="{% url 'product_detail' 'apple' %}">Яблуко</a></li>
+                    <li><a href="{% url 'product_detail' 'pumpkin' %}">Гарбуз</a></li>
+                    <li><a href="{% url 'product_detail' 'blue' %}">Чорниця</a></li>
+                    <li><a href="{% url 'product_detail' 'rasp' %}">Малина</a></li>
+                    <li><a href="{% url 'product_detail' 'mand' %}">Мандарин</a></li>
+                    <li><a href="{% url 'product_detail' 'pear' %}">Груша</a></li>
+                    <li><a href="{% url 'product_detail' 'aiva' %}">Айва</a></li>
+                    <li><a href="{% url 'product_detail' 'sliv' %}">Слива</a></li>
+                </ul>
+            </div>
+            <div class="col23">
+                <h4 >Інформація</h4>
+                <ul>
+                    <li><a href="{% url 'home' %}">Про нас</a></li>
+                    <li><a href="{% url 'contacts' %}">Фізичний магазин</a></li>
+                    <li><a href="{% url 'why' %}">Переваги</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="col24">
+                <p>Доставка по всій Україні</p>
+                <p>Працюємо щодня</p>
+                <p>066-709-97-35</p>
+                <p>Запитання? Дзвони або пиши з 9 до 21</p>
+                <p>Без вихідник</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
